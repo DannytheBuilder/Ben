@@ -22,6 +22,13 @@ public class Spoil extends Food
         }
     }
 
+    public void SpoilCheck()
+    {
+        if (Spoiled)
+        {
+            setCondition("Spoiled");
+        }
+    }
     public void Ratecheck()
     {
         int rate = getSpoilrate();

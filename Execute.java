@@ -10,6 +10,7 @@ public class Execute
         Bakery testing = new Bakery(bakename);
         System.out.println(testing);
         System.out.println(Name.randomName());
+        System.out.println(Name.randomName());
     }
     
 }

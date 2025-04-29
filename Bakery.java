@@ -19,10 +19,7 @@ public class Bakery
         this.Name = Name;
     }
 
-    public void Oven()
-    {
-        
-    }
+    
     
     public String toString()
     {

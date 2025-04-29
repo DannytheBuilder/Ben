@@ -5,14 +5,26 @@ public class Customer
     ArrayList<String> name = new ArrayList<String>();
     ArrayList<String> lastname = new ArrayList<String>();
     ArrayList<String> customer = new ArrayList<String>();
+    ArrayList<String> fgreet = new ArrayList<String>();
     String fname = null;
     String lname = null;
     public Customer(String fname, String lname)
     {
         this.fname = fname;
         this.lname = lname;
+        name();
+        FGreetings();
     }
-    public void Firstname()
+
+    public Customer()
+    {
+        name();
+        FGreetings();
+        String[] fullname = randomName().split(" ");
+        this.fname = fullname[0];
+        this.lname = fullname[1];
+    }
+    private void name()
     {
         name.add("Maxwell");
         name.add("Josh");
@@ -24,10 +36,7 @@ public class Customer
         name.add("Bob");
         name.add("Diddy");
         name.add("Miguel");
-    }
 
-    public void Lastname()
-    {
         lastname.add("Keller");
         lastname.add("Smith");
         lastname.add("Koo");
@@ -37,8 +46,10 @@ public class Customer
         lastname.add("Yoichi");
         lastname.add("Jone");
         lastname.add("Li");
+        lastname.add("Brookens");
+        lastname.add("Baker");
 
-    }
+}
 
     public String randomName()
     {
@@ -51,7 +62,38 @@ public class Customer
         String randomLastName = lastname.get(random.nextInt(lastname.size()));
         String fullname = randomName + " " + randomLastName;
         customer.add(fullname);
-        Customer(randomName, randomLastName);
         return fullname;
     }
+
+    public void FGreetings()
+    {
+       fgreet.add("Hello! I like");
+       fgreet.add("Excuse me? I like");
+       fgreet.add("Excuse me? I want");
+       fgreet.add("I like");
+    }
+
+    public String Greeting()
+    {
+        if (fgreet.isEmpty())
+        {
+            return "I like";
+        }
+        Random random = new Random();
+        return fgreet.get(random.nextInt(fgreet.size()));
+    }
+
+    public String getFirstName() {
+        return fname;
+    }
+
+    public String getLastName() {
+        return lname;
+    }
+
+    public String getFullName() {
+        return fname + " " + lname;
+    }
+
+    
 }
