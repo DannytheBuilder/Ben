@@ -1,5 +1,5 @@
 public class Food {
-
+    
     private String name = null;
     private String type = null;
     private int Spoilrate = 0;
@@ -13,6 +13,8 @@ public class Food {
         this.condition = condition;
         this.Cookrate = Cookrate;
     }
+
+    
 
     //getter method sections
     public String getName()
