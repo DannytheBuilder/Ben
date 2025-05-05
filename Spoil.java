@@ -2,9 +2,9 @@ public class Spoil extends Food
 {
     private boolean Spoiled = false;
     private int Spoilmeter = 0;
-    public Spoil(String name,String type, int spoilrate, boolean Spoiled, String condition, int Cookrate, int Spoilmeter)
+    public Spoil(String name,String type, int spoilrate, boolean Spoiled, String condition, int Spoilmeter)
     {
-        super(name, type, spoilrate, condition, Cookrate);
+        super(name, type, spoilrate, condition);
         this.Spoiled = Spoiled;
         this.Spoilmeter = Spoilmeter;
     }

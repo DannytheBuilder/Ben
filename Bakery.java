@@ -1,9 +1,11 @@
-import java.util.Scanner;
+
 public class Bakery 
 {
     private String Name = null;
-    static Scanner input = new Scanner(System.in);
+    public double Money = 0.0;
+    public double debt = 0;
     
+    // Bakery Stuff
     public Bakery(String Name)
     {
         this.Name = Name;
@@ -18,11 +20,29 @@ public class Bakery
     {
         this.Name = Name;
     }
-    
-    
+   
     
     public String toString()
     {
         return Name + "'s Bakery";
+    }
+
+    //Money Section
+
+    public void Payback()
+    {
+        if (debt > 0)
+        {
+            debt -= Money;
+            if (Money < 0.01)
+            {
+                System.out.println("You are in debt.");
+                Money += debt;
+                Money = 0;
+            }
+        } else 
+        {
+            System.out.println("No debt to payback.");
+        }
     }
 }
