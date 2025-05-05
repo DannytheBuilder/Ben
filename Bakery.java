@@ -1,10 +1,10 @@
-
+import java.util.ArrayList;
 public class Bakery 
 {
     private String Name = null;
     public double Money = 0.0;
     public double debt = 0;
-    
+    private ArrayList<Food> Current = new ArrayList<Food>(); 
     // Bakery Stuff
     public Bakery(String Name)
     {
@@ -20,11 +20,32 @@ public class Bakery
     {
         this.Name = Name;
     }
-   
     
+    public void Bake()
+    {
+        Food test = new Food();
+        for (int i = 0; i < test.getArray().size(); i++)
+        {
+            String yes = test.getArray().get(i).getCondition();
+            if (yes == "Raw")
+            {
+                Current.add(test.getArray().get(i));
+            }
+        }
+        BaketoString(Current);
+        
+    }
+    private void BaketoString(ArrayList<Food> bake)
+    {
+        for (int i = 0; i < bake.size(); i++)
+        {
+            System.out.println(i + ". " + bake.get(i).getName());
+        }
+    }
+
     public String toString()
     {
-        return Name + "'s Bakery";
+        return Name + " Bakery";
     }
 
     //Money Section

@@ -16,6 +16,9 @@ public class Execute
         System.out.println(Name.randomName());
         System.out.println(Name.randomName());
         tests.MainOrder();
+        tests.MainOrder();
+        testing.Bake();
+        
     }
     
 }

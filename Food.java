@@ -23,7 +23,7 @@ public class Food {
     }
 
    
-
+    // Order Functions 
     public void MainOrder()
     {
         Scanner input = new Scanner(System.in);
@@ -124,7 +124,10 @@ public class Food {
         return condition;
     }
     
-    
+    public ArrayList<Food> getArray()
+    {
+        return Current;
+    }
     //setter methods
     public void setFood(String food)
     {
@@ -146,3 +149,4 @@ public class Food {
         condition = con;
     }
 }
+
