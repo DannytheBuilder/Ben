@@ -7,6 +7,7 @@ public class Food {
     private int Spoilrate = 0;
     private String condition = null;
     ArrayList<Food> Current = new ArrayList<Food>();
+    ArrayList<Food> Raw = new ArrayList<Food>();
     public Food(String name,String type, int spoilrate, String condition) 
     {
         
@@ -22,7 +23,29 @@ public class Food {
 
     }
 
-   
+    // Bake Function
+    public void Bake()
+    {
+        
+        for (int i = 0; i < getArray().size(); i++)
+        {
+            String yes = getArray().get(i).getCondition();
+            if (yes == "Raw")
+            {
+                Raw.add(getArray().get(i));
+            }
+        }
+        
+        
+    }
+    public void BaketoString()
+    {
+        Bake();
+        for (int i = 0; i < Raw.size(); i++)
+        {
+            System.out.println(i + ". " + Raw.get(i).getType() + " " + Raw.get(i).getName());
+        }
+    }
     // Order Functions 
     public void MainOrder()
     {
@@ -149,4 +172,3 @@ public class Food {
         condition = con;
     }
 }
-

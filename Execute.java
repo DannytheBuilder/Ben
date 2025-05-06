@@ -15,10 +15,10 @@ public class Execute
         System.out.println(testing);
         System.out.println(Name.randomName());
         System.out.println(Name.randomName());
+        System.out.println();
         tests.MainOrder();
         tests.MainOrder();
-        testing.Bake();
-        
+        tests.BaketoString();
     }
     
 }

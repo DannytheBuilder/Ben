@@ -21,27 +21,6 @@ public class Bakery
         this.Name = Name;
     }
     
-    public void Bake()
-    {
-        Food test = new Food();
-        for (int i = 0; i < test.getArray().size(); i++)
-        {
-            String yes = test.getArray().get(i).getCondition();
-            if (yes == "Raw")
-            {
-                Current.add(test.getArray().get(i));
-            }
-        }
-        BaketoString(Current);
-        
-    }
-    private void BaketoString(ArrayList<Food> bake)
-    {
-        for (int i = 0; i < bake.size(); i++)
-        {
-            System.out.println(i + ". " + bake.get(i).getName());
-        }
-    }
 
     public String toString()
     {
