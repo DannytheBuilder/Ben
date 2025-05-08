@@ -1,10 +1,9 @@
-import java.util.ArrayList;
+
 public class Bakery 
 {
     private String Name = null;
     public double Money = 0.0;
     public double debt = 0;
-    private ArrayList<Food> Current = new ArrayList<Food>(); 
     // Bakery Stuff
     public Bakery(String Name)
     {

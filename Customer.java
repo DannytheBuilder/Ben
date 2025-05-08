@@ -6,7 +6,9 @@ public class Customer
     ArrayList<String> lastname = new ArrayList<String>();
     ArrayList<String> id = new ArrayList<String>();
     ArrayList<Customer> customer = new ArrayList<Customer>();
+    ArrayList<String> Customer = new ArrayList<String>();
     ArrayList<String> fgreet = new ArrayList<String>();
+    ArrayList<String> Order = new ArrayList<String>();
     String ids = "";
     String fname = null;
     String lname = null;
@@ -29,6 +31,13 @@ public class Customer
         String[] fullname = randomName().split(" ");
         this.fname = fullname[0];
         this.lname = fullname[1];
+    }
+
+    private void add()
+    {
+        Customer.add();
+        Customer.add();
+        Customer.add();
     }
 
     private void name()
@@ -101,7 +110,7 @@ public class Customer
         
         Customer cust = new Customer(randomName, randomLastName, randomid);
         customer.add(cust);
-        return fullname + " "+ randomid;
+        return fullname;
     }
 
     public void FGreetings()
@@ -110,6 +119,17 @@ public class Customer
        fgreet.add("Excuse me? I like");
        fgreet.add("Excuse me? I want");
        fgreet.add("I like");
+    }
+
+
+
+    public void Order()
+    {
+        Random random = new Random();
+        String order = fgreet.get(random.nextInt(fgreet.size()));
+        String name = randomName();
+        Order.add(name + ": " + order + " " +  );
+        System.out.println();
     }
 
     public String Greeting()
