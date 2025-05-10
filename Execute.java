@@ -11,14 +11,35 @@ public class Execute
         System.out.println("What is Your Bakery Name?");
         String bakename = test.nextLine();
         Bakery testing = new Bakery(bakename);
-        
+        Spoil check = new Spoil();
+
         System.out.println(testing);
-        System.out.println(Name.randomName());
-        System.out.println(Name.randomName());
-        System.out.println();
-        tests.MainOrder();
-        tests.MainOrder();
-        tests.BaketoString();
+        System.out.println("Welcome To The Bakery!");
+        System.out.println("First we will give you a test run of a customer for our testing phase.");
+        Name.Order();
+        while(true)
+        {
+            check.SpoilCheck();
+            System.out.println("1: Order");
+            System.out.println("2: Bake");
+            System.out.println("3: Feed");
+            int pick = test.nextInt();
+            if (pick == 1)
+            {
+              tests.MainOrder();
+            } else if (pick ==2)
+            {
+                tests.Bake();
+                tests.BaketoString();
+            }
+            else if (pick ==3)
+            {
+                Name.Feed();
+            } else 
+            {
+                System.out.println("Invaild");
+            }
+        }
     }
     
 }

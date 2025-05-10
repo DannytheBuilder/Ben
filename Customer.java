@@ -1,14 +1,16 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 public class Customer 
 {
     ArrayList<String> name = new ArrayList<String>();
     ArrayList<String> lastname = new ArrayList<String>();
     ArrayList<String> id = new ArrayList<String>();
     ArrayList<Customer> customer = new ArrayList<Customer>();
-    ArrayList<String> Customer = new ArrayList<String>();
+    ArrayList<String> Cust = new ArrayList<String>();
     ArrayList<String> fgreet = new ArrayList<String>();
     ArrayList<String> Order = new ArrayList<String>();
+    ArrayList<String> want = new ArrayList<String>();
     String ids = "";
     String fname = null;
     String lname = null;
@@ -20,7 +22,7 @@ public class Customer
         name();
         id();
         FGreetings();
-        
+        add();
     }
 
     public Customer()
@@ -28,6 +30,7 @@ public class Customer
         name();
         id();
         FGreetings();
+        add();
         String[] fullname = randomName().split(" ");
         this.fname = fullname[0];
         this.lname = fullname[1];
@@ -35,9 +38,9 @@ public class Customer
 
     private void add()
     {
-        Customer.add();
-        Customer.add();
-        Customer.add();
+        Cust.add("Brown");
+        Cust.add("White");
+        Cust.add("MutiGrain");
     }
 
     private void name()
@@ -85,7 +88,14 @@ public class Customer
         id.add("m");
     }
 
-    
+    private void FGreetings()
+    {
+       fgreet.add("Hello! I like");
+       fgreet.add("Excuse me? I like");
+       fgreet.add("Excuse me? I want");
+       fgreet.add("I like");
+    }
+
 
     public String randomName()
     {
@@ -107,20 +117,12 @@ public class Customer
         zero++;
         }
         String fullname = randomName + " " + randomLastName;
-        
         Customer cust = new Customer(randomName, randomLastName, randomid);
         customer.add(cust);
         return fullname;
     }
 
-    public void FGreetings()
-    {
-       fgreet.add("Hello! I like");
-       fgreet.add("Excuse me? I like");
-       fgreet.add("Excuse me? I want");
-       fgreet.add("I like");
-    }
-
+  
 
 
     public void Order()
@@ -128,10 +130,33 @@ public class Customer
         Random random = new Random();
         String order = fgreet.get(random.nextInt(fgreet.size()));
         String name = randomName();
-        Order.add(name + ": " + order + " " +  );
-        System.out.println();
+        String food = Cust.get(random.nextInt(Cust.size()));
+        
+        String ordering = name + ": " + order + " " + food + " Bread";
+        System.out.println(ordering);
+        Order.add(ordering + " " + ids);
     }
 
+    public void Feed()
+    {
+        Food get = new Food();
+        Scanner input = new Scanner(System.in);
+        ArrayList<Food> gets = get.getCookedArray();
+        System.out.println("Pick Which Food To Feed Customer");
+        for (int i = 0; i < gets.size(); i++)
+        {
+            System.out.println(i + ". " + gets.get(i).getType() + " " + gets.get(i).getName());
+        }
+        int number = input.nextInt();
+        if (number + 1 < gets.size())
+        {
+            System.out.println("Invaild");
+        } else 
+        {
+            System.out.println("Feeding Customer...");
+
+        }
+    }
     public String Greeting()
     {
         if (fgreet.isEmpty())

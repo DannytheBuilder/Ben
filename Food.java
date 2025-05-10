@@ -8,6 +8,7 @@ public class Food {
     private String condition = null;
     ArrayList<Food> Current = new ArrayList<Food>();
     ArrayList<Food> Raw = new ArrayList<Food>();
+    ArrayList<Food> Cooked = new ArrayList<Food>();
     public Food(String name,String type, int spoilrate, String condition) 
     {
         
@@ -36,14 +37,22 @@ public class Food {
             }
         }
         
-        
     }
     public void BaketoString()
     {
-        Bake();
+        Scanner input = new Scanner(System.in);
         for (int i = 0; i < Raw.size(); i++)
         {
             System.out.println(i + ". " + Raw.get(i).getType() + " " + Raw.get(i).getName());
+        }
+        int order = input.nextInt();
+        if (order + 1 < Raw.size())
+        {
+            System.out.println("Invaild");
+        } else
+        {
+            System.out.println("Baking....");
+            Cooked.add(Raw.get(order));
         }
     }
     // Order Functions 
@@ -150,6 +159,10 @@ public class Food {
     public ArrayList<Food> getArray()
     {
         return Current;
+    }
+    public ArrayList<Food> getCookedArray()
+    {
+        return Cooked;
     }
     //setter methods
     public void setFood(String food)

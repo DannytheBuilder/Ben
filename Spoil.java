@@ -9,6 +9,10 @@ public class Spoil extends Food
         this.Spoilmeter = Spoilmeter;
     }
 
+    public Spoil(){
+        
+    }
+
     public void Spoiling()
     {
         int rate = getSpoilrate();
